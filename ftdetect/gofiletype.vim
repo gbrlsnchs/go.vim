@@ -39,6 +39,7 @@ au! BufNewFile,BufRead *.mod,*.MOD
 " Set the filetype if the first non-comment and non-blank line starts with
 " 'module <path>'.
 au BufNewFile,BufRead go.mod call s:gomod()
+au BufNewFile,BufRead go.sum set filetype=gosum
 
 fun! s:gomod()
   for l:i in range(1, line('$'))
